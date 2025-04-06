@@ -16,12 +16,19 @@ class _HomeScreenState extends State<HomeScreen> {
 
   void _changeBackgroundColor() {
     setState(() {
-      _backgroundColor = Color(Random().nextInt(Constants.white));
-
-      final double luminance = _backgroundColor.computeLuminance();
-      _textColor =
-          luminance > Constants.luminance ? Colors.black : Colors.white;
+      _backgroundColor = _generateRandomColor();
+      _textColor = _determineTextColor(_backgroundColor);
     });
+  }
+
+  Color _generateRandomColor() {
+    return Color(Random().nextInt(Constants.white));
+  }
+
+  Color _determineTextColor(Color backgroundColor) {
+    return backgroundColor.computeLuminance() > Constants.luminance
+        ? Colors.black
+        : Colors.white;
   }
 
   @override
