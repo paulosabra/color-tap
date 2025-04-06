@@ -12,10 +12,15 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   Color _backgroundColor = Colors.white;
+  Color _textColor = Colors.black;
 
   void _changeBackgroundColor() {
     setState(() {
       _backgroundColor = Color(Random().nextInt(Constants.white));
+
+      final double luminance = _backgroundColor.computeLuminance();
+      _textColor =
+          luminance > Constants.luminance ? Colors.black : Colors.white;
     });
   }
 
@@ -28,10 +33,33 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Expanded(child: Center(child: Text('Hello there'))),
+            Expanded(
+              child: Center(
+                child: Text(
+                  'Hello there',
+                  style: TextStyle(
+                    fontSize: 32,
+                    fontWeight: FontWeight.bold,
+                    color: _textColor,
+                  ),
+                ),
+              ),
+            ),
             ElevatedButton(
               onPressed: _changeBackgroundColor,
-              child: const Text('Change Color'),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: _textColor,
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 32,
+                  vertical: 16,
+                ),
+              ),
+              child: Center(
+                child: Text(
+                  'Change Color',
+                  style: TextStyle(fontSize: 20, color: _backgroundColor),
+                ),
+              ),
             ),
           ],
         ),
