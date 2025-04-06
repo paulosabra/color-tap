@@ -89,13 +89,13 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "paulosabra.dev" "\0"
-            VALUE "FileDescription", "color_tap" "\0"
+            VALUE "CompanyName", "Paulo Sabra" "\0"
+            VALUE "FileDescription", "ColorTap" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "color_tap" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2025 paulosabra.dev. All rights reserved." "\0"
+            VALUE "InternalName", "ColorTap" "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2025 Paulo Sabra. All rights reserved." "\0"
             VALUE "OriginalFilename", "color_tap.exe" "\0"
-            VALUE "ProductName", "color_tap" "\0"
+            VALUE "ProductName", "ColorTap" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

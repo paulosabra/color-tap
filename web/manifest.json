@@ -1,6 +1,6 @@
 {
-    "name": "color_tap",
-    "short_name": "color_tap",
+    "name": "ColorTap",
+    "short_name": "ColorTap",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
