@@ -11,16 +11,7 @@ void main() {
       expect(find.text('Hello there'), findsOneWidget);
     });
 
-    testWidgets('HomeScreen displays "Change Color" - Button Widget', (
-      WidgetTester tester,
-    ) async {
-      await tester.pumpWidget(const MaterialApp(home: HomeScreen()));
-      expect(find.text('Change Color'), findsOneWidget);
-    });
-
-    testWidgets('Tapping "Change Color" button changes colors', (
-      WidgetTester tester,
-    ) async {
+    testWidgets('Tapping anywhere changes colors', (WidgetTester tester) async {
       await tester.pumpWidget(const MaterialApp(home: HomeScreen()));
 
       final initialBackgroundColor =
@@ -28,7 +19,7 @@ void main() {
       final initialTextColor =
           tester.widget<Text>(find.text('Hello there')).style?.color;
 
-      await tester.tap(find.text('Change Color'));
+      await tester.tap(find.byType(Scaffold));
       await tester.pump();
 
       final newBackgroundColor =

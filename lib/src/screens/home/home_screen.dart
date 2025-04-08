@@ -33,42 +33,19 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: _backgroundColor,
-      body: Padding(
-        padding: const EdgeInsets.all(24.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Expanded(
-              child: Center(
-                child: Text(
-                  'Hello there',
-                  style: TextStyle(
-                    fontSize: 32,
-                    fontWeight: FontWeight.bold,
-                    color: _textColor,
-                  ),
-                ),
-              ),
+    return GestureDetector(
+      onTap: _changeBackgroundColor,
+      child: Scaffold(
+        backgroundColor: _backgroundColor,
+        body: Center(
+          child: Text(
+            'Hello there',
+            style: TextStyle(
+              fontSize: 32,
+              fontWeight: FontWeight.bold,
+              color: _textColor,
             ),
-            ElevatedButton(
-              onPressed: _changeBackgroundColor,
-              style: ElevatedButton.styleFrom(
-                backgroundColor: _textColor,
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 32,
-                  vertical: 16,
-                ),
-              ),
-              child: Center(
-                child: Text(
-                  'Change Color',
-                  style: TextStyle(fontSize: 20, color: _backgroundColor),
-                ),
-              ),
-            ),
-          ],
+          ),
         ),
       ),
     );
